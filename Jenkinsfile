@@ -9,7 +9,7 @@ pipeline {
 	}
 	stage ('Publish') {
 	    steps {
-		    withDockerRegistry([CredentialsId: 'dockerhub', url: '' ]) {
+		    withDockerRegistry([credentialsId: 'dockerhub', url: '' ]) {
 		    sh 'docker push jenkinspipeline12/cicdpipeline:"$BUILD_ID"'
 			}
 		   }
